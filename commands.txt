@@ -1,0 +1,24 @@
+
+//Criar novo type
+curl -H "Content-Type: application/json" -XPUT localhost:9200/movies -d '{
+"mappings": {
+   "movie": {
+      "properties":{
+         "year": {"type": "date"}
+      }
+  }
+}
+}'
+
+
+//Inserir um registro
+bin/curl -XPUT localhost:9200/movies/movie/109487 -d '
+{
+   "genre": ["IMAX", "Sci-Fi"],
+   "title": "Interstellar",
+   "year":2014
+}'
+
+
+//Inserir Varios Registros
+bin/curl -XPUT localhost:9200/_bulk?pretty --data-binary @movies.json
