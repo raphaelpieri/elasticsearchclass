@@ -22,3 +22,6 @@ bin/curl -XPUT localhost:9200/movies/movie/109487 -d '
 
 //Inserir Varios Registros
 bin/curl -XPUT localhost:9200/_bulk?pretty --data-binary @movies.json
+
+
+hhh
